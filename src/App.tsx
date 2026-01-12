@@ -1,16 +1,25 @@
-import appLogo from './assets/spent-a-lot.png';
-import './App.css';
+import { useState } from 'react';
+import type { Tab } from './types';
+import { BottomNavigation, Header } from './components';
+import { Dashboard, Transactions } from './pages';
+import { TransactionsProvider } from './contexts';
+import './styles/globals.css';
+import './styles/variables.css';
 
 function App() {
+  const [activeTab, setActiveTab] = useState<Tab>('transactions');
+
   return (
-    <>
-      <header>
-        <a href="#" target="_blank">
-          <img src={appLogo} className="logo" alt="Spent-A-Lot logo" />
-        </a>
-        <h1>Spent-A-Lot</h1>
-      </header>
-    </>
+    <TransactionsProvider>
+      <Header />
+
+      <main>
+        {activeTab === 'transactions' && <Transactions />}
+        {activeTab === 'status' && <Dashboard />}
+      </main>
+
+      <BottomNavigation activeTab={activeTab} onChange={setActiveTab} />
+    </TransactionsProvider>
   );
 }
 

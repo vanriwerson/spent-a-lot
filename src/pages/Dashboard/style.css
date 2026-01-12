@@ -1,0 +1,140 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.balance h2 {
+  font-size: 1.2rem;
+}
+
+.balance strong {
+  font-size: 1.5rem;
+}
+
+.positive {
+  color: var(--color-success);
+}
+
+.negative {
+  color: var(--color-danger);
+}
+
+.warning {
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+}
+
+.t-graph-card {
+  padding-bottom: var(--space-3);
+}
+
+.t-graph {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.column h3 {
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  text-align: left;
+}
+
+.column .values {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.column span {
+  text-align: right;
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.column strong {
+  margin-top: auto;
+  font-size: 1.5rem;
+}
+
+.column.income strong {
+  color: var(--color-success);
+}
+
+.column.expense strong {
+  color: var(--color-danger);
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-border);
+}
+
+.usage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bar {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(90deg,
+      var(--color-success) 0%,
+      var(--color-success) 45%,
+      var(--color-warning) 55%,
+      var(--color-warning) 75%,
+      var(--color-danger) 85%,
+      var(--color-danger) 100%);
+
+  z-index: 0;
+}
+
+.remaining {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+
+  background-color: var(--color-surface);
+  transition: width 0.4s ease;
+
+  z-index: 1;
+}
+
+.usage span {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: right;
+}
+
+.cost100 h3 {
+  font-size: 1.2rem;
+}
+
+.cost100 strong {
+  color: var(--color-primary);
+}
