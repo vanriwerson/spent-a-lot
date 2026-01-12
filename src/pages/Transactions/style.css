@@ -1,0 +1,95 @@
+.transactions-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-sm);
+  gap: var(--space-1);
+}
+
+input {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.type-toggle {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.type-toggle button {
+  flex: 1;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: none;
+  font-weight: 500;
+}
+
+.type-toggle .active.expense {
+  background-color: rgba(220, 38, 38, 0.1);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.type-toggle .active.income {
+  background-color: rgba(22, 163, 74, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+button.primary {
+  padding: var(--space-3);
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.list li>div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.list li.income {
+  color: var(--color-success);
+}
+
+.list li.expense {
+  color: var(--color-danger);
+}
+
+.list button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.empty {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
