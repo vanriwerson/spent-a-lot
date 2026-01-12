@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  padding: var(--space-4);
+  padding-top: calc(var(--app-header-height) + var(--space-4));
+  padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+input {
+  background-color: #020617;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
