@@ -1,7 +1,7 @@
-# SpentALot 💸
+# 💸 SpentALot
 
 > **Aplicação pessoal de controle de gastos mensais**, inspirada no conceito clássico de **livro-caixa (gráfico T)**.  
-> Desenvolvida com foco em **simplicidade**, **clareza visual** e **persistência local**, permitindo registrar ganhos e despesas diretamente pelo navegador, inclusive no celular.
+> Aplicação mobile desenvolvida com foco em **simplicidade**, **clareza visual** e **persistência local**, permitindo registrar ganhos e despesas diretamente pelo navegador.
 
 O nome **SpentALot** é um trocadilho entre _“spent a lot”_ (gastei demais) e **axolotl**, mascote carismático que representa o app.
 
@@ -66,7 +66,10 @@ spent-a-lot/
   - Fácil leitura
   - Atualização incremental
   - Possível migração futura para backend
-- Ideal para uso pessoal
+- Ideal para:
+  - Uso pessoal
+  - Aplicação offline
+  - Deploy em hospedagem estática (GitHub Pages)
 
 ---
 
@@ -81,10 +84,10 @@ spent-a-lot/
 ## 🧩 Funcionalidades
 
 - ➕ Registro de ganhos e despesas
-- 📆 Organização por mês/ano
 - 📊 Visualização de saldo em tempo real
 - ⚠️ Alerta visual ao exceder o orçamento
 - 💾 Persistência automática no navegador
+- 📱 Uso fluido em desktop e mobile
 
 ---
 
@@ -116,17 +119,6 @@ npm run dev
 ```bash
 npm run build
 ```
-
----
-
-## 🚀 Deploy
-
-A aplicação é compatível com **GitHub Pages**, pois utiliza apenas recursos estáticos.
-
-O deploy consiste em:
-
-- Build da aplicação com Vite
-- Publicação da pasta `dist/`
 
 ---
 
