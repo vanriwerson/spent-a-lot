@@ -1,1 +1,1 @@
-export type Tab = 'movements' | 'status';
+export type Tab = 'transactions' | 'status';
