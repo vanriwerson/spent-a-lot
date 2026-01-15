@@ -60,3 +60,10 @@ p {
   flex-direction: column;
   gap: var(--space-3);
 }
+
+@media (min-width: 768px) {
+  main {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+}
