@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Tab } from './types';
-import { BottomNavigation, Header } from './components';
+import { BottomNavigation, Header, InstallButton } from './components';
 import { Dashboard, Transactions } from './pages';
 import { TransactionsProvider } from './contexts';
 import './styles/globals.css';
@@ -19,6 +19,8 @@ function App() {
       </main>
 
       <BottomNavigation activeTab={activeTab} onChange={setActiveTab} />
+
+      <InstallButton />
     </TransactionsProvider>
   );
 }
