@@ -9,35 +9,35 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
 
-      includeAssets: [
-        'icons/spent-a-lot.png',
-        'icons/money-moving.png',
-        'icons/wallet.png',
-      ],
+      includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
 
       manifest: {
-        name: 'Spent-A-Lot',
-        short_name: 'Spent-A-Lot',
+        name: 'SpentALot',
+        short_name: 'SpentALot',
         description: 'Planilha de gastos mensais, mas não é planilha! ^^',
-        theme_color: '#1f2933',
-        background_color: '#0f172a',
+
+        start_url: '/spent-a-lot/',
+        scope: '/spent-a-lot/',
+
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
+
+        background_color: '#0f172a',
+        theme_color: '#020617',
 
         icons: [
           {
-            src: '/icons/spent-a-lot.png',
+            src: '/spent-a-lot/icons/icon-192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/icons/spent-a-lot.png',
+            src: '/spent-a-lot/icons/icon-512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: '/icons/spent-a-lot.png',
+            src: '/spent-a-lot/icons/icon-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
