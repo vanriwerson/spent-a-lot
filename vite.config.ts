@@ -18,7 +18,7 @@ export default defineConfig({
       manifest: {
         name: 'Spent-A-Lot',
         short_name: 'Spent-A-Lot',
-        description: 'Planilha de gastos, mas não é planilha! ^^',
+        description: 'Planilha de gastos mensais, mas não é planilha! ^^',
         theme_color: '#1f2933',
         background_color: '#0f172a',
         display: 'standalone',
