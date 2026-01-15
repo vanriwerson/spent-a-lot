@@ -1,9 +1,9 @@
 # 💸 SpentALot
 
-> **Aplicação pessoal de controle de gastos mensais**, inspirada no conceito clássico de **livro-caixa (gráfico T)**.  
+> **Aplicação pessoal de controle de gastos mensais**, com visualização da saúde financeira inspirada no conceito de **livro-caixa (gráfico T)**.
 > Aplicação mobile desenvolvida com foco em **simplicidade**, **clareza visual** e **persistência local**, permitindo registrar ganhos e despesas diretamente pelo navegador.
 
-O nome **SpentALot** é um trocadilho entre _“spent a lot”_ (gastei demais) e **axolotl**, mascote carismático que representa o app.
+Por ser uma aplicação autoral, tomei a liberdade de criar um nome impactante. **SpentALot** é um trocadilho entre _“spent a lot”_ (gastei demais) e **axolotl**, mascote carismático que representa o app.
 
 ---
 
@@ -11,6 +11,7 @@ O nome **SpentALot** é um trocadilho entre _“spent a lot”_ (gastei demais) 
 
 - [**React 18**](https://react.dev/): Biblioteca para construção de interfaces declarativas e reativas.
 - [**Vite**](https://vitejs.dev/): Ferramenta de build e dev server rápido para projetos frontend modernos.
+- [**Vite PWA Plugin**](https://vite-pwa-org.netlify.app/): Plugin oficial para Vite que simplifica a criação de **Progressive Web Apps**, automatizando a geração do **manifest**, registro do **Service Worker**, cache de assets e suporte a atualização automática.
 - [**TypeScript**](https://www.typescriptlang.org/): Tipagem estática para maior segurança e previsibilidade.
 - [**CSS3 (Vanilla)**](https://developer.mozilla.org/docs/Web/CSS): Estilização manual, sem frameworks, com foco em controle total da UI.
 - **LocalStorage**: Persistência de dados no navegador, funcionando como “database” local.
@@ -29,11 +30,13 @@ spent-a-lot/
 ├── src/
 │   ├── assets/           # Imagens e recursos visuais (mascote, ícones)
 │   ├── components/       # Componentes reutilizáveis da interface
-│   ├── hooks/            # Hooks customizados (ex: persistência no localStorage)
+│   ├── contexts/         # Contextos da aplicação (estados compartilhados)
+│   ├── helpers/          # Funções auxiliares (formatação, geração de id)
+│   ├── hooks/            # Hooks customizados (ex: análise de instalação PWA)
 │   ├── pages/            # Páginas da aplicação
-│   ├── types/            # Tipagens TypeScript (domínio financeiro)
-│   ├── utils/            # Funções auxiliares e cálculos
+│   ├── services/         # Cálculos e manipulação do localstorage
 │   ├── styles/           # Estilos globais e variáveis CSS
+│   ├── types/            # Tipagens TypeScript (domínio financeiro)
 │   ├── App.tsx           # Estrutura principal da aplicação
 │   └── main.tsx          # Ponto de entrada
 │
@@ -42,9 +45,18 @@ spent-a-lot/
 
 ---
 
-## ✨ Conceitos e Destaques Técnicos
+## ✨ Features Disponíveis
 
-### 📊 Livro-caixa (Gráfico T)
+### Tab Lançamentos
+
+- Form para a entrada da base de cálculos:
+  - Salário líquido
+  - Carga horária de trabalho semanal
+  - Lista de ganhos e gastos
+
+---
+
+### Tab Saúde (Gráfico T)
 
 - Separação clara entre:
   - **Entradas (ganhos)**
@@ -53,9 +65,10 @@ spent-a-lot/
   - Total de ganhos
   - Total de gastos
   - Saldo restante
-- Indicação visual quando:
-  - O gasto se aproxima do limite
-  - O saldo é ultrapassado
+  - Custo 100 (Conceito aprendido com a Nath Arcuri (Me Poupe). Faz pensar um pouco antes de gastar ^^)
+- Indicação visual:
+  - Porcentagem de salário utilizada
+  - Gastos extrapolando ganhos
 
 ---
 
@@ -66,28 +79,15 @@ spent-a-lot/
   - Fácil leitura
   - Atualização incremental
   - Possível migração futura para backend
-- Ideal para:
-  - Uso pessoal
-  - Aplicação offline
-  - Deploy em hospedagem estática (GitHub Pages)
+- Ideal para uso pessoal
 
 ---
 
 ### 📱 Mobile-first
 
 - Interface pensada para uso diário no celular
-- Inputs simples e acessíveis
+- Layout simples e acessível
 - Feedback visual imediato após cada lançamento
-
----
-
-## 🧩 Funcionalidades
-
-- ➕ Registro de ganhos e despesas
-- 📊 Visualização de saldo em tempo real
-- ⚠️ Alerta visual ao exceder o orçamento
-- 💾 Persistência automática no navegador
-- 📱 Uso fluido em desktop e mobile
 
 ---
 
@@ -113,12 +113,6 @@ npm run dev
 ```
 
 > Aplicação disponível em `http://localhost:5173`
-
-### 4. Build para produção
-
-```bash
-npm run build
-```
 
 ---
 
